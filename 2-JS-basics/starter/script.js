@@ -19,23 +19,26 @@ console.log(nicksAge);
 
 //Interdependent functions to calculate age
 
- function currentYear() {
+function calculateAge(birthYear) {
 
-    return new Date().getFullYear();
+   return 2018 - birthYear;
 
- }
+}
 
- function birthYear() {
+var ageNick = calculateAge(1986);
+console.log(ageNick);
 
-    return prompt("What year were you born?");
+function calculateRetirementYears(year, firstName) {
+   let age = calculateAge(year);
+   let yearsLeft = 65 - age;
 
- }
+   if (yearsLeft > 0) {
+      console.log(firstName + " has " + yearsLeft + " years left until retirement");
+   } else {
+      console.log(firstName + " has already retired!!");
+   }
 
- function calculateAge (currentYear, birthYear) {
 
-    var age = currentYear - birthYear;
-    console.log(age);
+}
 
- }
-
- calculateAge(currentYear(), birthYear());
+calculateRetirementYears(1986, "Nick");

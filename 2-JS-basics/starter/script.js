@@ -19,6 +19,8 @@ console.log(nicksAge);
 
 //Interdependent functions to calculate age
 
+
+/*
 function calculateAge(birthYear) {
 
    return 2018 - birthYear;
@@ -42,3 +44,26 @@ function calculateRetirementYears(year, firstName) {
 }
 
 calculateRetirementYears(1986, "Nick");
+
+*/
+
+function calculateTip(bill) {
+   let percentage;
+   if (bill < 50) {
+      percentage = .2;  
+   } else if (bill > 50 && bill < 200) {
+      percentage = .15; 
+   } else {
+      percentage = .1;
+   }
+   return percentage * bill;
+}
+
+console.log(calculateTip(124));
+
+var foodBills = [124, 48, 268];
+var totalBills = [];
+
+foodBills.forEach(function(e){
+   console.log(calculateTip(e));
+});
